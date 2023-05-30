@@ -18,22 +18,23 @@ def frame_preprocess(obs):
     new_height = 84
 
     frame = np.asarray(obs[0])
-    print(frame.shape)
 
     gray_frame = cv2.cvtColor(frame, cv2.COLOR_BGR2GRAY)
 
     downsampled_frame = cv2.resize(gray_frame, (110, 84))
 
-
     state = downsampled_frame[:,13:97]
     
-    return obs
+    return state
 
 for i in range(episodes):
 
     observation = env.reset()
 
     state = frame_preprocess(observation)
+
+    cv2.imshow("Frame", state)
+    cv2.waitKey(0)
 
     done = False
 
@@ -44,6 +45,5 @@ for i in range(episodes):
 
     action = env.action_space.sample()
 
-    while not done:
-
-        env.step(action)
+    # while not done:
+    env.step(action)
