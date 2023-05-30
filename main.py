@@ -24,6 +24,9 @@ def frame_preprocess(obs):
 
     downsampled_frame = cv2.resize(gray_frame, (110, 84))
 
+
+    state = downsampled_frame[:,13:97]
+    
     return obs
 
 for i in range(episodes):
