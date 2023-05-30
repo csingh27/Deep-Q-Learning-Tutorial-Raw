@@ -45,5 +45,5 @@ for i in range(episodes):
 
     action = env.action_space.sample()
 
-    # while not done:
-    env.step(action)
+    while not done:
+        state, reward, done, truncate, info = env.step(action)
