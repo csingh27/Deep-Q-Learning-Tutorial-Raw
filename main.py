@@ -16,7 +16,10 @@ def frame_preprocess(obs):
 
     new_width = 110
     new_height = 84
-   return obs
+
+    frame = np.asarray(obs[0])
+    print(frame.shape)
+    return obs
 
 for i in range(episodes):
 
