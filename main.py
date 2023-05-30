@@ -22,6 +22,7 @@ def frame_preprocess(obs):
 
     gray_frame = cv2.cvtColor(frame, cv2.COLOR_BGR2GRAY)
 
+    downsampled_frame = cv2.resize(gray_frame, (110, 84))
 
     return obs
 
