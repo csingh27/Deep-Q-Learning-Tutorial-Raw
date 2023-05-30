@@ -10,6 +10,17 @@ env = gym.make('BreakoutDeterministic-v4')
 episodes = 50000
 
 for i in range(episodes):
+    
     observation = env.reset()
 
+    done = False
+    
+    # 0 NOOP (No action)
+    # 1 FIRE
+    # 2 RIGHT
+    # 3 LEFT
+    
+    action = env.action_space.sample()
 
+    while not done:
+        env.step(action)
