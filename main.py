@@ -19,6 +19,10 @@ def frame_preprocess(obs):
 
     frame = np.asarray(obs[0])
     print(frame.shape)
+
+    gray_frame = cv2.cvtColor(frame, cv2.COLOR_BGR2GRAY)
+
+
     return obs
 
 for i in range(episodes):
