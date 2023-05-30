@@ -9,6 +9,12 @@ env = gym.make('BreakoutDeterministic-v4')
 # A1.3 Reset environment
 episodes = 50000
 
+# A2 Frame pre-processing
+import cv2
+def frame_preprocess(observation):
+    return observation
+
+
 for i in range(episodes):
     
     observation = env.reset()
