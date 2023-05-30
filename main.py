@@ -11,22 +11,28 @@ episodes = 50000
 
 # A2 Frame pre-processing
 import cv2
-def frame_preprocess(observation):
-    return observation
+import numpy as np
+def frame_preprocess(obs):
 
+    new_width = 110
+    new_height = 84
+   return obs
 
 for i in range(episodes):
-    
+
     observation = env.reset()
 
+    state = frame_preprocess(observation)
+
     done = False
-    
+
     # 0 NOOP (No action)
     # 1 FIRE
     # 2 RIGHT
     # 3 LEFT
-    
+
     action = env.action_space.sample()
 
     while not done:
+
         env.step(action)
